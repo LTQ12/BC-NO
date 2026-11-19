@@ -46,7 +46,44 @@ from run_bcno_v5_rigor_addons import (
     spd_project_2x2,
     spd_project_3x3,
 )
-from run_bcno_v6_audit_fixes import eval_3d_dual, reinit_baseline_properly, train_3d_fixed
+from run_bcno_v6_audit_fixes import eval_3d_dual, reinit_baseline_properly
+
+
+def train_3d_any(mdl: nn.Module, pack: dict, epochs: int, batch_size: int, lr: float, seed: int, device: torch.device, is_bcno: bool):
+    """Train 3D models; BCNO3D needs labels/max_comp (train_3d_fixed in v6 omits them)."""
+    torch.manual_seed(seed)
+    mdl = reinit_baseline_properly(mdl).to(device)
+    opt = torch.optim.AdamW(mdl.parameters(), lr=lr, weight_decay=0.0)
+    sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=max(epochs, 1))
+    B = pack["kappa"].shape[0]
+    v_rms = float(torch.sqrt((pack["v_true"] ** 2).mean()).clamp_min(1e-3))
+    for _ in range(epochs):
+        mdl.train()
+        perm = torch.randperm(B)
+        for s in range(0, B, batch_size):
+            idx = perm[s : min(s + batch_size, B)]
+            kap = pack["kappa"][idx].to(device)
+            lft = pack["lift"][idx].to(device)
+            o1 = pack["o1"][idx].to(device)
+            o2 = pack["o2"][idx].to(device)
+            dst = pack["dist"][idx].to(device)
+            vt = pack["v_true"][idx].to(device)
+            if is_bcno:
+                up = mdl(kap, lft, o1, o2, dst, pack["labels"][idx].to(device), pack["max_comp"])[0]
+            else:
+                up = mdl(kap, lft, o1, o2, dst)
+            vp = up - lft
+            mse_norm = ((vp - vt) / v_rms).pow(2).mean()
+            vt_n = torch.sqrt((vt ** 2).sum((1, 2, 3)) + 1e-10)
+            nz = vt_n > 1e-4
+            rel = (torch.sqrt(((vp[nz] - vt[nz]) ** 2).sum((1, 2, 3)) + 1e-10) / vt_n[nz]).mean() if bool(nz.any()) else 0.0
+            loss = 0.5 * mse_norm + 0.5 * rel
+            opt.zero_grad()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(mdl.parameters(), 2.0)
+            opt.step()
+        sched.step()
+    return mdl
 
 
 def _train_2d(name, factory, is_b, tr, epochs, lr, seed, device):
@@ -329,7 +366,7 @@ def part_c_64_3seed(root: Path, device: torch.device, smoke: bool) -> dict:
         rows = []
         for sd in seeds:
             print(f"  {name} seed={sd}", flush=True)
-            mdl = train_3d_fixed(ctor().float(), s_tr, ep, 2 if smoke else 3, 3e-3, sd, device)
+            mdl = train_3d_any(ctor().float(), s_tr, ep, 2 if smoke else 3, 3e-3, sd, device, is_bcno=is_b)
             rows.append({
                 "id": eval_3d_dual(mdl, s_id, is_b, device, bs=2),
                 "ood": eval_3d_dual(mdl, s_od, is_b, device, bs=2),
@@ -355,7 +392,7 @@ def part_c_64_3seed(root: Path, device: torch.device, smoke: bool) -> dict:
         ]:
             rows = []
             for sd in seeds:
-                mdl = train_3d_fixed(ctor().float(), r_tr, ep, 2 if smoke else 3, 3e-3, sd, device)
+                mdl = train_3d_any(ctor().float(), r_tr, ep, 2 if smoke else 3, 3e-3, sd, device, is_bcno=is_b)
                 rows.append(eval_3d_dual(mdl, r_te, is_b, device, bs=2))
             out["ruhr64"][name] = agg_seeds(rows) if len(rows) > 1 else rows[0]
             print(f"  Ruhr64 {name}:", out["ruhr64"][name], flush=True)

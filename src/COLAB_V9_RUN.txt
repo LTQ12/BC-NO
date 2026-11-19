@@ -1,0 +1,32 @@
+BC-NO v9 — 修 C + 重框 B + CT-in-loop FE²
+
+相对 v8 多上传 1 个文件：
+  run_bcno_v9_engineering_fix.py
+
+仍需（与 v8 相同的 flat .py 包）+：
+  rve_specs_compact.npz          # Part E 必需（Ruhr CT mask）
+  rve_3d_ruhr64_compact.npz      # Part C Ruhr 可选
+
+建议分三次跑（B 最久）：
+
+%cd /content
+
+# C：修好的 64^3 × 3 seeds（先跑，相对快）
+!python /content/run_bcno_v9_engineering_fix.py --root /content --only C
+
+# E：真实 CT 形貌进 FE² 环（工程点）
+!python /content/run_bcno_v9_engineering_fix.py --root /content --only E
+
+# B：主结果 16×16 / 20×10 + 压力测试 24×24 / 30×15 + 诊断量
+!python /content/run_bcno_v9_engineering_fix.py --root /content --only B
+
+# 也可用修好的 v8 只重跑 C：
+!python /content/run_bcno_v8_scale_engineering.py --root /content --only C
+
+每次跑完立刻改名保存 JSON，避免覆盖：
+  bcno_v9_engineering_fix_results.json
+
+读数口径（写正文用）：
+  - 热：优先 T_spd + diss_spd；flux_edge 只作边界探针
+  - 弹：优先 Ceff_ood (+ energy_spd)；tip_over_ceff 用来揭 FNO tip 运气
+  - 主网格 16×16 / 20×10 才是 headline；放大网格是 stress probe
