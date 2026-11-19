@@ -1,0 +1,26 @@
+[
+  {
+    "N": 64,
+    "sparse_lu_ms": 7.41,
+    "bcno_cpu_ms": 5.76,
+    "cpu_speedup": 1.3
+  },
+  {
+    "N": 128,
+    "sparse_lu_ms": 28.73,
+    "bcno_cpu_ms": 33.43,
+    "cpu_speedup": 0.9
+  },
+  {
+    "N": 256,
+    "sparse_lu_ms": 181.8,
+    "bcno_cpu_ms": 129.19,
+    "cpu_speedup": 1.4
+  },
+  {
+    "N": 512,
+    "sparse_lu_ms": 1266.35,
+    "bcno_cpu_ms": 605.99,
+    "cpu_speedup": 2.1
+  }
+]

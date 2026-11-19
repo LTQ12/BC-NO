@@ -1,0 +1,166 @@
+{
+  "micro_solve_s": 40.63,
+  "M_macro": 16,
+  "models": {
+    "BC-NO": {
+      "audit_id": {
+        "OnsagerSymErr": 0.031155580654740334,
+        "OnsagerSymMax": 0.5247065424919128,
+        "SPDRate": 1.0,
+        "VoigtReussRate": 1.0,
+        "MinEig": 0.221243754029274
+      },
+      "audit_ood": {
+        "OnsagerSymErr": 0.022051937878131866,
+        "OnsagerSymMax": 0.45709216594696045,
+        "SPDRate": 1.0,
+        "VoigtReussRate": 1.0,
+        "MinEig": 0.008943967521190643
+      },
+      "fe2": {
+        "micro_infer_s": 0.544,
+        "speedup_vs_lu": 74.6,
+        "micro_rve_rel_err": 0.17503714561462402,
+        "macro_T_rel_L2": 0.03278593296056737,
+        "macro_flux_rel_err": 0.041752016694593,
+        "macro_spd_all": false
+      }
+    },
+    "MgNO2d": {
+      "audit_id": {
+        "OnsagerSymErr": 0.0326707698404789,
+        "OnsagerSymMax": 0.20848731696605682,
+        "SPDRate": 1.0,
+        "VoigtReussRate": 1.0,
+        "MinEig": 0.19264793395996094
+      },
+      "audit_ood": {
+        "OnsagerSymErr": 0.06060044839978218,
+        "OnsagerSymMax": 0.24141597747802734,
+        "SPDRate": 1.0,
+        "VoigtReussRate": 0.90625,
+        "MinEig": 0.0012523706536740065
+      },
+      "fe2": {
+        "micro_infer_s": 1.351,
+        "speedup_vs_lu": 30.1,
+        "micro_rve_rel_err": 0.7982444167137146,
+        "macro_T_rel_L2": 0.09737849284023505,
+        "macro_flux_rel_err": 1.0293279508392783,
+        "macro_spd_all": true
+      }
+    },
+    "CNO2d": {
+      "audit_id": {
+        "OnsagerSymErr": 0.03647918254137039,
+        "OnsagerSymMax": 0.1793118268251419,
+        "SPDRate": 0.96875,
+        "VoigtReussRate": 0.875,
+        "MinEig": -0.3097526431083679
+      },
+      "audit_ood": {
+        "OnsagerSymErr": 0.10698911547660828,
+        "OnsagerSymMax": 0.3700679838657379,
+        "SPDRate": 0.96875,
+        "VoigtReussRate": 0.96875,
+        "MinEig": -0.05948647856712341
+      },
+      "fe2": {
+        "micro_infer_s": 0.744,
+        "speedup_vs_lu": 54.6,
+        "micro_rve_rel_err": 1.3720966577529907,
+        "macro_T_rel_L2": 0.08983615843093969,
+        "macro_flux_rel_err": 1.1589730961706008,
+        "macro_spd_all": false
+      }
+    },
+    "FFNO2d": {
+      "audit_id": {
+        "OnsagerSymErr": 0.03337115794420242,
+        "OnsagerSymMax": 0.17877314984798431,
+        "SPDRate": 0.96875,
+        "VoigtReussRate": 0.875,
+        "MinEig": -0.8443760275840759
+      },
+      "audit_ood": {
+        "OnsagerSymErr": 0.14938239753246307,
+        "OnsagerSymMax": 0.7706226706504822,
+        "SPDRate": 0.78125,
+        "VoigtReussRate": 0.75,
+        "MinEig": -13.586917877197266
+      },
+      "fe2": {
+        "micro_infer_s": 2.25,
+        "speedup_vs_lu": 18.1,
+        "micro_rve_rel_err": 0.7414969205856323,
+        "macro_T_rel_L2": 0.14056719241829244,
+        "macro_flux_rel_err": 0.32901124173027463,
+        "macro_spd_all": false
+      }
+    },
+    "ResUNet": {
+      "audit_id": {
+        "OnsagerSymErr": 0.028635352849960327,
+        "OnsagerSymMax": 0.1417892426252365,
+        "SPDRate": 1.0,
+        "VoigtReussRate": 1.0,
+        "MinEig": 0.2051881104707718
+      },
+      "audit_ood": {
+        "OnsagerSymErr": 0.04927702993154526,
+        "OnsagerSymMax": 0.14530040323734283,
+        "SPDRate": 1.0,
+        "VoigtReussRate": 1.0,
+        "MinEig": 0.014216127805411816
+      },
+      "fe2": {
+        "micro_infer_s": 0.344,
+        "speedup_vs_lu": 117.9,
+        "micro_rve_rel_err": 0.9808372855186462,
+        "macro_T_rel_L2": 0.11236991386120197,
+        "macro_flux_rel_err": 1.179072361311616,
+        "macro_spd_all": true
+      }
+    },
+    "FNO2d": {
+      "audit_id": {
+        "OnsagerSymErr": 0.024828793480992317,
+        "OnsagerSymMax": 0.09519238770008087,
+        "SPDRate": 1.0,
+        "VoigtReussRate": 0.96875,
+        "MinEig": 0.2651805579662323
+      },
+      "audit_ood": {
+        "OnsagerSymErr": 0.0879916325211525,
+        "OnsagerSymMax": 0.38060882687568665,
+        "SPDRate": 0.96875,
+        "VoigtReussRate": 0.84375,
+        "MinEig": -2.1065804958343506
+      },
+      "fe2": {
+        "micro_infer_s": 0.396,
+        "speedup_vs_lu": 102.7,
+        "micro_rve_rel_err": 1.9353244304656982,
+        "macro_T_rel_L2": 0.12855830111837965,
+        "macro_flux_rel_err": 1.8162197756156042,
+        "macro_spd_all": false
+      }
+    }
+  },
+  "truth_audit": {
+    "id": {
+      "OnsagerSymErr": 0.0,
+      "OnsagerSymMax": 0.0,
+      "SPDRate": 1.0,
+      "VoigtReussRate": 1.0,
+      "MinEig": 0.2206723541021347
+    },
+    "ood": {
+      "OnsagerSymErr": 0.0,
+      "OnsagerSymMax": 0.0,
+      "SPDRate": 1.0,
+      "VoigtReussRate": 1.0,
+      "MinEig": 0.009060125797986984
+    }
+  }
+}

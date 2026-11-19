@@ -1,0 +1,50 @@
+[
+  {
+    "name": "BC-NO",
+    "params": 71020,
+    "val": {
+      "KeffRelErr": 0.07528931647539139,
+      "DiagRelErr": 0.057935476303100586,
+      "Fluctuation_L2": 0.27626338601112366,
+      "Temperature_L2": 0.016240078955888748
+    },
+    "locked_test": {
+      "KeffRelErr": 0.010523299686610699,
+      "DiagRelErr": 0.009848911315202713,
+      "Fluctuation_L2": 0.7969222068786621,
+      "Temperature_L2": 0.0014778987970203161
+    }
+  },
+  {
+    "name": "ResUNet",
+    "params": 324801,
+    "val": {
+      "KeffRelErr": 0.9399664402008057,
+      "DiagRelErr": 0.8276152610778809,
+      "Fluctuation_L2": 533.5651245117188,
+      "Temperature_L2": 0.08063218742609024
+    },
+    "locked_test": {
+      "KeffRelErr": 0.14545688033103943,
+      "DiagRelErr": 0.13947047293186188,
+      "Fluctuation_L2": 1658.326904296875,
+      "Temperature_L2": 0.016879403963685036
+    }
+  },
+  {
+    "name": "FNO2d",
+    "params": 825793,
+    "val": {
+      "KeffRelErr": 0.9267142415046692,
+      "DiagRelErr": 0.7571658492088318,
+      "Fluctuation_L2": 553.0174560546875,
+      "Temperature_L2": 0.07777866721153259
+    },
+    "locked_test": {
+      "KeffRelErr": 0.13561531901359558,
+      "DiagRelErr": 0.11921863257884979,
+      "Fluctuation_L2": 559.2733154296875,
+      "Temperature_L2": 0.017731446772813797
+    }
+  }
+]

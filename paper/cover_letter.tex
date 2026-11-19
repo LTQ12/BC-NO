@@ -1,0 +1,33 @@
+\documentclass[10pt]{letter}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.8in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\signature{Taiqian Liu\\on behalf of Lijun Liu and Chunhui Zhu}
+\address{Department of Automation\\
+School of Aerospace Engineering\\
+Xiamen University\\
+Xiamen 361005, China\\
+\href{mailto:liulijun@xmu.edu.cn}{liulijun@xmu.edu.cn}}
+
+\begin{document}
+\begin{letter}{Editor\\
+\textit{Computer Methods in Applied Mechanics and Engineering}}
+
+\opening{Dear Editor,}
+
+We submit the manuscript ``Boundary-Capacitance Neural Operators for High-Contrast Multiscale Homogenization'' for consideration in \textit{Computer Methods in Applied Mechanics and Engineering}.
+
+Surrogate modeling of representative volume elements (RVEs) is essential to two-scale $\mathrm{FE}^2$ homogenization, yet standard neural operators suffer $\Theta(\kappa)$ error amplification at high phase contrast, while equipotential clamping discards the $O(1)$ interior polarization flux. Perfect-conductor asymptotics work at $\kappa\ge 10^4$; the practical gap is the intermediate band $\kappa\in[10,10^3]$. We characterize the discrete sensitivity $\|g\|_1=\Theta(\kappa)$, prove one-cell strip localization of $\sigma=h L_0(u-\ell)$, and relocate standard $\mathrm{FE}^2$ virtual-work averaging from the outer RVE boundary to the inclusion interface, yielding contrast-invariant readout on predicted fields. The Boundary-Capacitance Neural Operator (BC-NO) couples $O(N^d\log N)$ constant-coefficient Green layers with normalized residuals, capacitance pooling, and percolation-aware adaptive readouts.
+
+Under a shared dipole readout across fourteen benchmarks, architectural OOD gains versus the strongest baseline per experiment are $1.0\times$--$4.1\times$ (readout often explains the rest). Thermal and elastic $\mathrm{FE}^2$ plates reach $2.38\%$ flux and $0.61\%$ displacement error. Same-GPU Jacobi-PCG speedups are $2.7\times$--$8.0\times$; same-CPU sparse LU is slower at $N=128$ ($0.86\times$). GPU-vs-CPU $\mathrm{FE}^2$ wall-clock ratios are reported as workflow comparisons. Limitations include percolating fallback, cross-resolution scaling, $32^3$ synthetic accuracy, and the absence of matched-tolerance AMG/FFT-CG timing.
+
+The code and data generators to reproduce all results will be hosted at \url{https://github.com/LTQ12/BC-NO}. This manuscript is original, has not been published previously, and is not under consideration elsewhere. All authors have approved the manuscript and its submission.
+
+Thank you for considering our work.
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}

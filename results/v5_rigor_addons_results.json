@@ -1,0 +1,465 @@
+{
+  "device": "cuda",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "epochs": 80,
+  "exp10b_spd_projection": {
+    "micro_solve_s": 40.94,
+    "M_macro": 16,
+    "models": {
+      "BC-NO": {
+        "inf_s": 0.559,
+        "spd_rate_raw": 0.984375,
+        "min_eig_raw": -6.1767377853393555,
+        "spd_all_raw": false,
+        "macro_T_L2_raw": 0.030432751648757684,
+        "macro_flux_err_raw": 0.006313286709714195,
+        "spd_all_proj": true,
+        "macro_T_L2_proj": 0.029880162185639672,
+        "macro_flux_err_proj": 0.024844893775565473
+      },
+      "MgNO2d": {
+        "inf_s": 1.376,
+        "spd_rate_raw": 0.99609375,
+        "min_eig_raw": -2.313445568084717,
+        "spd_all_raw": false,
+        "macro_T_L2_raw": 0.10941628417121527,
+        "macro_flux_err_raw": 1.1691054346703964,
+        "spd_all_proj": true,
+        "macro_T_L2_proj": 0.1099815201236801,
+        "macro_flux_err_proj": 1.1649883784099286
+      },
+      "FFNO2d": {
+        "inf_s": 2.259,
+        "spd_rate_raw": 0.8984375,
+        "min_eig_raw": -7.047878265380859,
+        "spd_all_raw": false,
+        "macro_T_L2_raw": 0.14056719241829244,
+        "macro_flux_err_raw": 0.32901124173027463,
+        "spd_all_proj": true,
+        "macro_T_L2_proj": 0.10617427316375756,
+        "macro_flux_err_proj": 0.5509540237327103
+      },
+      "CNO2d": {
+        "inf_s": 0.752,
+        "spd_rate_raw": 0.94921875,
+        "min_eig_raw": -13.81539249420166,
+        "spd_all_raw": false,
+        "macro_T_L2_raw": 0.08811099223085836,
+        "macro_flux_err_raw": 1.2298158088220146,
+        "spd_all_proj": true,
+        "macro_T_L2_proj": 0.093670440852609,
+        "macro_flux_err_proj": 1.263018662718806
+      },
+      "ResUNet": {
+        "inf_s": 0.353,
+        "spd_rate_raw": 1.0,
+        "min_eig_raw": 1.3174126148223877,
+        "spd_all_raw": true,
+        "macro_T_L2_raw": 0.09879727316316889,
+        "macro_flux_err_raw": 1.0633533891928475,
+        "spd_all_proj": true,
+        "macro_T_L2_proj": 0.09879727560306291,
+        "macro_flux_err_proj": 1.063353334541418
+      },
+      "FNO2d": {
+        "inf_s": 0.394,
+        "spd_rate_raw": 0.98046875,
+        "min_eig_raw": -6.363241672515869,
+        "spd_all_raw": false,
+        "macro_T_L2_raw": 0.12855830111837965,
+        "macro_flux_err_raw": 1.8162197756156042,
+        "spd_all_proj": true,
+        "macro_T_L2_proj": 0.13505210645147891,
+        "macro_flux_err_proj": 1.8425127652161555
+      }
+    }
+  },
+  "exp5b_crossres_ablation": {
+    "BC-NO_SingleRes128": {
+      "N64": {
+        "KeffRelErr": {
+          "mean": 0.10788778712352116,
+          "std": 0.01153005147445881
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.06404621402422588,
+          "std": 0.006310040027551994
+        },
+        "DiagRelErr": {
+          "mean": 0.09917009125153224,
+          "std": 0.015895664231619654
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.08381233364343643,
+          "std": 0.017363027544797276
+        },
+        "Fluctuation_L2": {
+          "mean": 0.222869540254275,
+          "std": 0.0038288385483044407
+        },
+        "Temperature_L2": {
+          "mean": 0.015044686694939932,
+          "std": 0.0008066327465790679
+        },
+        "EnergyRelErr": {
+          "mean": 0.13349721239026122,
+          "std": 0.01556889343429884
+        },
+        "InferMsPerSample": {
+          "mean": 2.216845750808716,
+          "std": 2.5805043866972897
+        }
+      },
+      "N128": {
+        "KeffRelErr": {
+          "mean": 0.03742175052563349,
+          "std": 0.003465691403828437
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.05083423604567846,
+          "std": 0.002183821945105445
+        },
+        "DiagRelErr": {
+          "mean": 0.02673507295548916,
+          "std": 0.0024451076582557387
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.048386012514432274,
+          "std": 0.005742245365493375
+        },
+        "Fluctuation_L2": {
+          "mean": 0.09744875133037567,
+          "std": 0.0004855609001302361
+        },
+        "Temperature_L2": {
+          "mean": 0.007242249324917793,
+          "std": 0.00011948300121218154
+        },
+        "EnergyRelErr": {
+          "mean": 0.0717178240972827,
+          "std": 0.00356965737014615
+        },
+        "InferMsPerSample": {
+          "mean": 0.9531565010547638,
+          "std": 0.013835919246274697
+        }
+      },
+      "N256": {
+        "KeffRelErr": {
+          "mean": 0.1488370324174563,
+          "std": 0.05003866316453807
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.1268617163101832,
+          "std": 0.008449197187488013
+        },
+        "DiagRelErr": {
+          "mean": 0.08676363776127498,
+          "std": 0.030244495943766117
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.09792150060335796,
+          "std": 0.01337780198141572
+        },
+        "Fluctuation_L2": {
+          "mean": 0.32384324073791504,
+          "std": 0.11534900729830437
+        },
+        "Temperature_L2": {
+          "mean": 0.030436602731545765,
+          "std": 0.012411597767568425
+        },
+        "EnergyRelErr": {
+          "mean": 0.24169975613230724,
+          "std": 0.0691703900283578
+        },
+        "InferMsPerSample": {
+          "mean": 6.007979313532512,
+          "std": 2.69216792219492
+        }
+      },
+      "sigma_strip_rel_err": {
+        "N64": 0.1329,
+        "N128": 0.088,
+        "N256": 0.1619
+      }
+    },
+    "BC-NO_MultiRes64_128": {
+      "N64": {
+        "KeffRelErr": {
+          "mean": 0.11126336455345154,
+          "std": 0.01040696092660748
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.03848237544298172,
+          "std": 0.006879871616160811
+        },
+        "DiagRelErr": {
+          "mean": 0.09614791721105576,
+          "std": 0.01649904731061194
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.04890761027733485,
+          "std": 0.01669509200635084
+        },
+        "Fluctuation_L2": {
+          "mean": 0.17868858575820923,
+          "std": 0.0024789626054615914
+        },
+        "Temperature_L2": {
+          "mean": 0.012501130190988382,
+          "std": 0.00010339344911652095
+        },
+        "EnergyRelErr": {
+          "mean": 0.10476462138566289,
+          "std": 0.010046325491182112
+        },
+        "InferMsPerSample": {
+          "mean": 0.7746865351994833,
+          "std": 0.13854856184494183
+        }
+      },
+      "N128": {
+        "KeffRelErr": {
+          "mean": 0.03655015801390012,
+          "std": 0.00463812844098118
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.051829513162374496,
+          "std": 0.005029759512967527
+        },
+        "DiagRelErr": {
+          "mean": 0.023280562212069828,
+          "std": 0.0015323350492785683
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.04918227965633074,
+          "std": 0.00768312557742468
+        },
+        "Fluctuation_L2": {
+          "mean": 0.09532716870307922,
+          "std": 0.003491729435502356
+        },
+        "Temperature_L2": {
+          "mean": 0.00718492657567064,
+          "std": 0.00021926573515114662
+        },
+        "EnergyRelErr": {
+          "mean": 0.07038795537806289,
+          "std": 0.0030216596509550693
+        },
+        "InferMsPerSample": {
+          "mean": 0.9704704085985819,
+          "std": 0.05031674481044473
+        }
+      },
+      "N256": {
+        "KeffRelErr": {
+          "mean": 0.12881843745708466,
+          "std": 0.04299150406792134
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.12036043405532837,
+          "std": 0.008068985372803143
+        },
+        "DiagRelErr": {
+          "mean": 0.07020604734619458,
+          "std": 0.01854890935138586
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.08333254605531693,
+          "std": 0.011179675072930322
+        },
+        "Fluctuation_L2": {
+          "mean": 0.3739956219991048,
+          "std": 0.13225602069701853
+        },
+        "Temperature_L2": {
+          "mean": 0.04188712313771248,
+          "std": 0.00845612120972486
+        },
+        "EnergyRelErr": {
+          "mean": 0.388188315655888,
+          "std": 0.14096299438621832
+        },
+        "InferMsPerSample": {
+          "mean": 4.406054814656575,
+          "std": 0.017432781379766175
+        }
+      },
+      "sigma_strip_rel_err": {
+        "N64": 0.106,
+        "N128": 0.0795,
+        "N256": 0.1681
+      }
+    },
+    "FFNO2d_MultiRes64_128": {
+      "N64": {
+        "KeffRelErr": {
+          "mean": 0.31910042961438495,
+          "std": 0.061482436421137716
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.11719486614068349,
+          "std": 0.017641060234231135
+        },
+        "DiagRelErr": {
+          "mean": 0.19709152479966482,
+          "std": 0.04314708633506441
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.12124667316675186,
+          "std": 0.023262917128939662
+        },
+        "Fluctuation_L2": {
+          "mean": 0.42409459749857586,
+          "std": 0.011188531013992191
+        },
+        "Temperature_L2": {
+          "mean": 0.027271751935283344,
+          "std": 0.0007126777623251965
+        },
+        "EnergyRelErr": {
+          "mean": 0.7082005270033216,
+          "std": 0.011966984185186368
+        },
+        "InferMsPerSample": {
+          "mean": 0.5769232908884684,
+          "std": 0.08456815347136191
+        }
+      },
+      "N128": {
+        "KeffRelErr": {
+          "mean": 0.2400364726781845,
+          "std": 0.022407708925332306
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.1467237969239553,
+          "std": 0.007104100127879691
+        },
+        "DiagRelErr": {
+          "mean": 0.14594639341036478,
+          "std": 0.000690890939480925
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.11281325668096542,
+          "std": 0.007331246262875562
+        },
+        "Fluctuation_L2": {
+          "mean": 0.32535553971926373,
+          "std": 0.010872040200863298
+        },
+        "Temperature_L2": {
+          "mean": 0.018289027114709217,
+          "std": 0.00045217336010729305
+        },
+        "EnergyRelErr": {
+          "mean": 0.7203640619549124,
+          "std": 0.008850907820274801
+        },
+        "InferMsPerSample": {
+          "mean": 4.267354806264241,
+          "std": 0.0005842929111340517
+        }
+      },
+      "N256": {
+        "KeffRelErr": {
+          "mean": 0.7928083141644796,
+          "std": 0.08600485127010105
+        },
+        "KeffRelErr_Naive": {
+          "mean": 0.36300965150197345,
+          "std": 0.024159732806841947
+        },
+        "DiagRelErr": {
+          "mean": 0.35749613245328266,
+          "std": 0.024587124396552144
+        },
+        "DiagRelErr_Naive": {
+          "mean": 0.3126940627892812,
+          "std": 0.021344106004028772
+        },
+        "Fluctuation_L2": {
+          "mean": 0.42913288871447247,
+          "std": 0.005237095060531196
+        },
+        "Temperature_L2": {
+          "mean": 0.03534685199459394,
+          "std": 0.000490012784799423
+        },
+        "EnergyRelErr": {
+          "mean": 1.1027065686514632,
+          "std": 0.010045119163624956
+        },
+        "InferMsPerSample": {
+          "mean": 17.80441403388977,
+          "std": 2.9819891839859727
+        }
+      },
+      "sigma_strip_rel_err": {
+        "N64": null,
+        "N128": null,
+        "N256": null
+      }
+    }
+  },
+  "exp14_elasticity_fe2": {
+    "micro_solve_s": 130.79,
+    "n_active_elems": 184,
+    "N_micro": 64,
+    "models": {
+      "BCNO-Elas": {
+        "params": 92812,
+        "inf_s": 0.605,
+        "speedup": 216.1,
+        "ceff_rel_err": 0.04949409142136574,
+        "onsager_sym_err": 0.004455569200217724,
+        "spd_rate_raw": 0.9945652173913043,
+        "min_eig_raw": -0.4954621493816376,
+        "macro_u_L2_raw": 0.03519448836024473,
+        "macro_se_err_raw": 0.017816584721244425,
+        "macro_tip_err_raw": 0.025218931294889654,
+        "spd_all_proj": true,
+        "macro_u_L2_proj": 0.006122861187110161,
+        "macro_se_err_proj": 0.007395135647727246,
+        "macro_tip_err_proj": 0.005905561801385596
+      },
+      "ResUNet-Elas": {
+        "params": 473442,
+        "inf_s": 0.176,
+        "speedup": 741.3,
+        "ceff_rel_err": 0.24439816176891327,
+        "onsager_sym_err": 0.06912823021411896,
+        "spd_rate_raw": 0.9836956521739131,
+        "min_eig_raw": -38.795921325683594,
+        "macro_u_L2_raw": 0.14500913661333373,
+        "macro_se_err_raw": 0.014910379709306797,
+        "macro_tip_err_raw": 0.13695039960984773,
+        "spd_all_proj": true,
+        "macro_u_L2_proj": 0.07442061107832372,
+        "macro_se_err_proj": 0.07634678590445215,
+        "macro_tip_err_proj": 0.07664779580502526
+      },
+      "FNO-Elas": {
+        "params": 2103810,
+        "inf_s": 0.17,
+        "speedup": 770.2,
+        "ceff_rel_err": 0.3083459138870239,
+        "onsager_sym_err": 0.04721837118268013,
+        "spd_rate_raw": 0.9836956521739131,
+        "min_eig_raw": -80.78995513916016,
+        "macro_u_L2_raw": 0.059834524112493646,
+        "macro_se_err_raw": 0.022008468450447384,
+        "macro_tip_err_raw": 0.057863662171133395,
+        "spd_all_proj": true,
+        "macro_u_L2_proj": 0.018325020404478976,
+        "macro_se_err_proj": 0.014132708064729918,
+        "macro_tip_err_proj": 0.01933293390789526
+      }
+    }
+  }
+}

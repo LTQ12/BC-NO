@@ -1,0 +1,402 @@
+{
+  "device": "cuda",
+  "smoke": false,
+  "exp10_fe2_audit": {
+    "micro_solve_s": 41.11,
+    "models": {
+      "BC-NO": {
+        "audit_ood": {
+          "OnsagerSymErr": 0.025463469326496124,
+          "OnsagerSymMax": 0.47948336601257324,
+          "SPDRate": 1.0,
+          "VoigtReussRate": 1.0,
+          "MinEig": 0.008868931792676449
+        },
+        "fe2": {
+          "inf_s": 0.541,
+          "speedup": 76.0,
+          "rve_err": 0.16317059099674225,
+          "macro_T_L2": 0.025116529043366836,
+          "macro_flux_err": 0.03375418165001076,
+          "spd_all": false
+        }
+      },
+      "MgNO2d": {
+        "audit_ood": {
+          "OnsagerSymErr": 0.07955139875411987,
+          "OnsagerSymMax": 0.5412798523902893,
+          "SPDRate": 0.96875,
+          "VoigtReussRate": 0.9375,
+          "MinEig": -0.8290128707885742
+        },
+        "fe2": {
+          "inf_s": 1.356,
+          "speedup": 30.3,
+          "rve_err": 0.7486642003059387,
+          "macro_T_L2": 0.0944508961856222,
+          "macro_flux_err": 0.8510620452855546,
+          "spd_all": false
+        }
+      },
+      "CNO2d": {
+        "audit_ood": {
+          "OnsagerSymErr": 0.13029053807258606,
+          "OnsagerSymMax": 0.5296176671981812,
+          "SPDRate": 1.0,
+          "VoigtReussRate": 0.9375,
+          "MinEig": 0.016434835270047188
+        },
+        "fe2": {
+          "inf_s": 0.743,
+          "speedup": 55.3,
+          "rve_err": 1.4822012186050415,
+          "macro_T_L2": 0.08479827785378186,
+          "macro_flux_err": 1.2411556691522887,
+          "spd_all": false
+        }
+      },
+      "FFNO2d": {
+        "audit_ood": {
+          "OnsagerSymErr": 0.14938239753246307,
+          "OnsagerSymMax": 0.7706226706504822,
+          "SPDRate": 0.78125,
+          "VoigtReussRate": 0.75,
+          "MinEig": -13.586917877197266
+        },
+        "fe2": {
+          "inf_s": 2.249,
+          "speedup": 18.3,
+          "rve_err": 0.7414969205856323,
+          "macro_T_L2": 0.14056719241829244,
+          "macro_flux_err": 0.32901124173027463,
+          "spd_all": false
+        }
+      },
+      "ResUNet": {
+        "audit_ood": {
+          "OnsagerSymErr": 0.07302127033472061,
+          "OnsagerSymMax": 0.26771458983421326,
+          "SPDRate": 0.9375,
+          "VoigtReussRate": 1.0,
+          "MinEig": -0.6209893226623535
+        },
+        "fe2": {
+          "inf_s": 0.345,
+          "speedup": 119.3,
+          "rve_err": 0.8680306077003479,
+          "macro_T_L2": 0.10336380801928496,
+          "macro_flux_err": 0.9239909020118146,
+          "spd_all": true
+        }
+      },
+      "FNO2d": {
+        "audit_ood": {
+          "OnsagerSymErr": 0.0879916325211525,
+          "OnsagerSymMax": 0.38060882687568665,
+          "SPDRate": 0.96875,
+          "VoigtReussRate": 0.84375,
+          "MinEig": -2.1065804958343506
+        },
+        "fe2": {
+          "inf_s": 0.392,
+          "speedup": 104.8,
+          "rve_err": 1.9353244304656982,
+          "macro_T_L2": 0.12855830111837965,
+          "macro_flux_err": 1.8162197756156042,
+          "spd_all": false
+        }
+      }
+    }
+  },
+  "exp11_large_sample_1000": {
+    "BC-NO": {
+      "id": {
+        "KeffRelErr": 0.03980514407157898,
+        "KeffRelErr_Naive": 0.033555880188941956,
+        "DiagRelErr": 0.02927975170314312,
+        "DiagRelErr_Naive": 0.03620356693863869,
+        "Fluctuation_L2": 0.09154785424470901,
+        "Temperature_L2": 0.006227564997971058,
+        "EnergyRelErr": 0.06577966145799002,
+        "InferMsPerSample": 0.9749841690063477
+      },
+      "ood": {
+        "KeffRelErr": 0.40949776768684387,
+        "KeffRelErr_Naive": 0.29697686433792114,
+        "DiagRelErr": 0.3264571726322174,
+        "DiagRelErr_Naive": 0.345518559217453,
+        "Fluctuation_L2": 0.28765952587127686,
+        "Temperature_L2": 0.043775904923677444,
+        "EnergyRelErr": 0.28566645226836307,
+        "InferMsPerSample": 0.977623462677002
+      }
+    },
+    "MgNO2d": {
+      "id": {
+        "KeffRelErr": 0.10063526034355164,
+        "KeffRelErr_Naive": 0.10063526034355164,
+        "DiagRelErr": 0.07361624389886856,
+        "DiagRelErr_Naive": 0.07361624389886856,
+        "Fluctuation_L2": 0.1742894947528839,
+        "Temperature_L2": 0.009953673928976059,
+        "EnergyRelErr": 0.3111370371447502,
+        "InferMsPerSample": 2.524482011795044
+      },
+      "ood": {
+        "KeffRelErr": 0.4983864724636078,
+        "KeffRelErr_Naive": 0.4983864724636078,
+        "DiagRelErr": 0.4381510019302368,
+        "DiagRelErr_Naive": 0.4381510019302368,
+        "Fluctuation_L2": 0.3444049060344696,
+        "Temperature_L2": 0.04264703392982483,
+        "EnergyRelErr": 0.7565480966501313,
+        "InferMsPerSample": 2.451094388961792
+      }
+    },
+    "Transolver2d": {
+      "id": {
+        "KeffRelErr": 0.11560594290494919,
+        "KeffRelErr_Naive": 0.11560594290494919,
+        "DiagRelErr": 0.1043415367603302,
+        "DiagRelErr_Naive": 0.1043415367603302,
+        "Fluctuation_L2": 0.5243535041809082,
+        "Temperature_L2": 0.028726596385240555,
+        "EnergyRelErr": 1.165892771899128,
+        "InferMsPerSample": 6.046968698501587
+      },
+      "ood": {
+        "KeffRelErr": 0.6655629873275757,
+        "KeffRelErr_Naive": 0.6655629873275757,
+        "DiagRelErr": 0.6773850321769714,
+        "DiagRelErr_Naive": 0.6773850321769714,
+        "Fluctuation_L2": 0.6444116234779358,
+        "Temperature_L2": 0.07354997843503952,
+        "EnergyRelErr": 2.207005300035373,
+        "InferMsPerSample": 6.06662392616272
+      }
+    },
+    "FFNO2d": {
+      "id": {
+        "KeffRelErr": 0.05938182771205902,
+        "KeffRelErr_Naive": 0.05938182771205902,
+        "DiagRelErr": 0.04861009493470192,
+        "DiagRelErr_Naive": 0.04861009493470192,
+        "Fluctuation_L2": 0.18450592458248138,
+        "Temperature_L2": 0.010599671863019466,
+        "EnergyRelErr": 0.5397884147982768,
+        "InferMsPerSample": 4.219951629638672
+      },
+      "ood": {
+        "KeffRelErr": 0.5018854737281799,
+        "KeffRelErr_Naive": 0.5018854737281799,
+        "DiagRelErr": 0.5755172371864319,
+        "DiagRelErr_Naive": 0.5755172371864319,
+        "Fluctuation_L2": 0.3766774833202362,
+        "Temperature_L2": 0.04628770798444748,
+        "EnergyRelErr": 1.5724521073140165,
+        "InferMsPerSample": 4.216892719268799
+      }
+    },
+    "CNO2d": {
+      "id": {
+        "KeffRelErr": 0.11623640358448029,
+        "KeffRelErr_Naive": 0.11623640358448029,
+        "DiagRelErr": 0.10237398743629456,
+        "DiagRelErr_Naive": 0.10237398743629456,
+        "Fluctuation_L2": 0.41506290435791016,
+        "Temperature_L2": 0.023789599537849426,
+        "EnergyRelErr": 0.5520147019229172,
+        "InferMsPerSample": 1.3376867771148682
+      },
+      "ood": {
+        "KeffRelErr": 0.6870255470275879,
+        "KeffRelErr_Naive": 0.6870255470275879,
+        "DiagRelErr": 0.6106851696968079,
+        "DiagRelErr_Naive": 0.6106851696968079,
+        "Fluctuation_L2": 0.5719608068466187,
+        "Temperature_L2": 0.06930000334978104,
+        "EnergyRelErr": 1.1570584395218986,
+        "InferMsPerSample": 1.3280141353607178
+      }
+    },
+    "ResUNet": {
+      "id": {
+        "KeffRelErr": 0.08024787902832031,
+        "KeffRelErr_Naive": 0.08024787902832031,
+        "DiagRelErr": 0.06668455898761749,
+        "DiagRelErr_Naive": 0.06668455898761749,
+        "Fluctuation_L2": 0.263035386800766,
+        "Temperature_L2": 0.014958727173507214,
+        "EnergyRelErr": 0.33931630882233854,
+        "InferMsPerSample": 0.575791597366333
+      },
+      "ood": {
+        "KeffRelErr": 0.627488911151886,
+        "KeffRelErr_Naive": 0.627488911151886,
+        "DiagRelErr": 0.526985764503479,
+        "DiagRelErr_Naive": 0.526985764503479,
+        "Fluctuation_L2": 0.4451051354408264,
+        "Temperature_L2": 0.05292172729969025,
+        "EnergyRelErr": 0.8000114241885542,
+        "InferMsPerSample": 0.5437839031219482
+      }
+    },
+    "FNO2d": {
+      "id": {
+        "KeffRelErr": 0.41427624225616455,
+        "KeffRelErr_Naive": 0.41427624225616455,
+        "DiagRelErr": 0.3595690429210663,
+        "DiagRelErr_Naive": 0.3595690429210663,
+        "Fluctuation_L2": 0.4562397301197052,
+        "Temperature_L2": 0.025717463344335556,
+        "EnergyRelErr": 1.6053214622115086,
+        "InferMsPerSample": 0.6427347660064697
+      },
+      "ood": {
+        "KeffRelErr": 1.5387825965881348,
+        "KeffRelErr_Naive": 1.5387825965881348,
+        "DiagRelErr": 1.5956149101257324,
+        "DiagRelErr_Naive": 1.5956149101257324,
+        "Fluctuation_L2": 0.6454227566719055,
+        "Temperature_L2": 0.07266826927661896,
+        "EnergyRelErr": 3.381310491635753,
+        "InferMsPerSample": 0.6424343585968018
+      }
+    }
+  },
+  "exp12_3d_64_synth": {
+    "BCNO-3D": {
+      "id": {
+        "DiagKeff": 0.07273848354816437,
+        "FluctL2": 0.16835083067417145,
+        "InferMs": 14.96585210164388
+      },
+      "ood": {
+        "DiagKeff": 0.10970653593540192,
+        "FluctL2": 0.2187270224094391,
+        "InferMs": 13.927928606669107
+      }
+    },
+    "ResUNet-3D": {
+      "id": {
+        "DiagKeff": 1.07095205783844,
+        "FluctL2": 0.9999999403953552,
+        "InferMs": 9.012341499328613
+      },
+      "ood": {
+        "DiagKeff": 10.129827499389648,
+        "FluctL2": 1.000003695487976,
+        "InferMs": 7.353274027506511
+      }
+    },
+    "FNO-3D": {
+      "id": {
+        "DiagKeff": 1.0467865467071533,
+        "FluctL2": 0.9953964352607727,
+        "InferMs": 12.405292193094889
+      },
+      "ood": {
+        "DiagKeff": 9.604158401489258,
+        "FluctL2": 1.0023585557937622,
+        "InferMs": 10.334165891011557
+      }
+    }
+  },
+  "exp12_3d_64_ruhr": {
+    "BCNO-3D": {
+      "test": {
+        "DiagKeff": 0.001422451576218009,
+        "FluctL2": 0.10672227293252945,
+        "InferMs": 13.246324327256945
+      }
+    },
+    "ResUNet-3D": {
+      "test": {
+        "DiagKeff": 0.053651999682188034,
+        "FluctL2": 1.0021522045135498,
+        "InferMs": 8.705774943033854
+      }
+    },
+    "FNO-3D": {
+      "test": {
+        "DiagKeff": 0.046229857951402664,
+        "FluctL2": 0.9129763841629028,
+        "InferMs": 12.073059876759848
+      }
+    }
+  },
+  "exp13_nonlinear_lognormal_star": {
+    "BCNO-NL": {
+      "id": {
+        "DiagDip": 0.07170778512954712,
+        "DiagNaive": 0.3794267177581787,
+        "FluctL2": 0.12795637547969818
+      },
+      "ood": {
+        "DiagDip": 0.09051809459924698,
+        "DiagNaive": 9.1012544631958,
+        "FluctL2": 0.17130804061889648
+      }
+    },
+    "MgNO2d": {
+      "id": {
+        "DiagDip": 0.08682925254106522,
+        "DiagNaive": 0.6195953488349915,
+        "FluctL2": 0.13406825065612793
+      },
+      "ood": {
+        "DiagDip": 0.09172262996435165,
+        "DiagNaive": 8.797590255737305,
+        "FluctL2": 0.1544775813817978
+      }
+    },
+    "FFNO2d": {
+      "id": {
+        "DiagDip": 0.18656305968761444,
+        "DiagNaive": 0.5315123200416565,
+        "FluctL2": 0.14384499192237854
+      },
+      "ood": {
+        "DiagDip": 0.2767086625099182,
+        "DiagNaive": 32.92081832885742,
+        "FluctL2": 0.205124169588089
+      }
+    },
+    "CNO2d": {
+      "id": {
+        "DiagDip": 0.14378798007965088,
+        "DiagNaive": 0.6527817249298096,
+        "FluctL2": 0.1818036437034607
+      },
+      "ood": {
+        "DiagDip": 0.18561579287052155,
+        "DiagNaive": 18.654481887817383,
+        "FluctL2": 0.22089190781116486
+      }
+    },
+    "ResUNet": {
+      "id": {
+        "DiagDip": 0.07505562901496887,
+        "DiagNaive": 0.5361849665641785,
+        "FluctL2": 0.11935435980558395
+      },
+      "ood": {
+        "DiagDip": 0.11691505461931229,
+        "DiagNaive": 22.491100311279297,
+        "FluctL2": 0.14939257502555847
+      }
+    },
+    "FNO2d": {
+      "id": {
+        "DiagDip": 0.25826194882392883,
+        "DiagNaive": 1.3926769495010376,
+        "FluctL2": 0.19997678697109222
+      },
+      "ood": {
+        "DiagDip": 0.2685380280017853,
+        "DiagNaive": 31.323637008666992,
+        "FluctL2": 0.25161078572273254
+      }
+    }
+  }
+}

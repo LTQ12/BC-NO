@@ -1,0 +1,32 @@
+BC-NO v7 Colab run — NO large .pt upload
+
+All fiber/PBC/3D packs are generated on the fly in /content.
+Upload only these .py files into /content (flat, no subdirs):
+
+  make_fig_empirical_mechanism.py
+  run_bcno_v7_empirical_addons.py
+  baselines_2d.py
+  bcno_model_2d.py
+  bcno_model_3d.py
+  colab_data_gen.py
+  rve_discrete_operator_2d.py
+  rve_discrete_operator_3d.py
+  run_bcno_paper_suite.py
+  run_bcno_v2_addons.py
+  run_bcno_v5_rigor_addons.py
+  run_bcno_v6_audit_fixes.py
+  uno_2d.py
+
+Run:
+%cd /content
+!python /content/run_bcno_v7_empirical_addons.py --root /content --epochs-curves 60
+
+Faster (skip curves + 3D PCG):
+!python /content/run_bcno_v7_empirical_addons.py --root /content --skip-curves --skip-3d
+
+Download:
+  bcno_v7_empirical_addons_results.json
+  empirical_mechanism_data.json
+  fig_empirical_mechanism.pdf
+  fig_matched_precision_timing.pdf
+  fig_training_curves_fiber128.pdf

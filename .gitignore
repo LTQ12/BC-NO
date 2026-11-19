@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+*.log
+*.aux
+*.out
+*.bbl
+*.blg
+*.spl
+*.synctex.gz
+results_local/
+*.pt
+wide_data/
+bench_data/
+.ipynb_checkpoints/

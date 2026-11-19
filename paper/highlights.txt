@@ -1,0 +1,5 @@
+* Field L2 regression amplifies high-contrast effective tensor errors by O(kappa).
+* Interface virtual-work dipole readout removes kappa from the averaging weights.
+* BC-NO pairs DST/FFT Green layers with normalized residuals and capacitance pooling.
+* Vs strongest all-dipole baselines, OOD tensor error drops by 1.0-4.1x.
+* FE2 plates reach <2.4% macro error; GPU vs CPU FEM is a workflow comparison.

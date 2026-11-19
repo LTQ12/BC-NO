@@ -1,0 +1,44 @@
+BC-NO v8 — 四项扩规模 / 工程（无需大 .pt）
+
+Upload these .py into /content (flat):
+  run_bcno_v8_scale_engineering.py
+  make_fig_empirical_mechanism.py   (optional)
+  baselines_2d.py
+  bcno_model_2d.py
+  bcno_model_3d.py
+  bcno_elasticity_2d.py
+  colab_data_gen.py
+  rve_discrete_operator_2d.py
+  rve_discrete_operator_3d.py
+  run_bcno_paper_suite.py
+  run_bcno_fe2_audit.py
+  run_bcno_v2_addons.py
+  run_bcno_v5_rigor_addons.py
+  run_bcno_v6_audit_fixes.py
+  run_bcno_scale_and_fe2.py
+  uno_2d.py
+
+Optional (small) for Ruhr 64^3:
+  rve_3d_ruhr64_compact.npz
+
+Recommended: run parts separately (full ALL is long on Colab):
+
+%cd /content
+
+# A) Exp.11 1000-train × 3 seeds
+!python /content/run_bcno_v8_scale_engineering.py --root /content --only A
+
+# B) Enlarged FE2: thermal 24×24 + elastic 30×15 × 3 seeds
+!python /content/run_bcno_v8_scale_engineering.py --root /content --only B
+
+# C) 64^3 Synth (+ Ruhr if npz) × 3 seeds
+!python /content/run_bcno_v8_scale_engineering.py --root /content --only C
+
+# D) Exp.1 64 shapes + Exp.4b-scale 256-train hard packs
+!python /content/run_bcno_v8_scale_engineering.py --root /content --only D
+
+Smoke:
+!python /content/run_bcno_v8_scale_engineering.py --root /content --smoke --only AB
+
+Download after each part (script overwrites JSON — rename if needed):
+  bcno_v8_scale_engineering_results.json
